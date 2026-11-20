@@ -1,0 +1,74 @@
+{
+  "manifest_version": 3,
+  "name": "DIWAN_BOUTIQUE",
+  "version": "1.7.16",
+  "description": "Automates the full Myntra Direct order processing flow: Picklist → QC Pass → Pack → Invoice & Label Print.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DIWAN BOUTIQUE · Print settings",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mdirect.myntrainfo.com/*"
+      ],
+      "js": [
+        "export-control.js",
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "css": [
+        "panel.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://mdirect.myntrainfo.com/*"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "js": [
+        "hook.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "scripting",
+    "alarms",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://mdirect.myntrainfo.com/*",
+    "https://partnersapi.myntrainfo.com/*",
+    "https://diwan-license.diwanboutique-arkesh-2741.workers.dev/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "pdfjs/pdf.min.js",
+        "pdfjs/pdf.worker.min.js"
+      ],
+      "matches": [
+        "https://mdirect.myntrainfo.com/*"
+      ]
+    }
+  ]
+}

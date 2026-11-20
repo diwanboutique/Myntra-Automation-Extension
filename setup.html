@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DIWAN BOUTIQUE · QZ Tray setup</title>
+<style>*{box-sizing:border-box}body{background:#F2F8F8;color:#0F282F;font:16px/1.55 system-ui;margin:0}main{margin:7vh auto;padding:clamp(20px,5vw,48px);max-width:660px;background:#FFFFFF;border:1px solid #D1E2E3;border-radius:18px}small{letter-spacing:.12em;color:#007277}h1{font:36px Georgia,serif;margin:12px 0}label{display:block;font-weight:600;margin:18px 0}input{display:block;margin-top:6px}button{border:1px solid #007277;border-radius:8px;background:#0F282F;color:#fff;padding:10px 16px;cursor:pointer}button:disabled{opacity:.55}output{display:block;margin:16px 0}
+body{background:#EAF4F4} main{background:white;border:1px solid #CCDCDD;border-radius:20px;box-shadow:0 18px 54px #0F282F15;overflow:hidden;padding-top:0}
+main>small{display:block;margin:0 calc(-1 * clamp(20px,5vw,48px)) 28px;padding:19px clamp(20px,5vw,48px);background:radial-gradient(ellipse at 105% -45%,#02EFF0 0%,transparent 49%),linear-gradient(110deg,#0F282F 12%,#153E47 72%,#116871 100%);color:#FFFFFF;font-weight:650}
+h1{font:600 32px/1.18 'Segoe UI',system-ui,sans-serif;letter-spacing:-.9px}
+form{padding:4px 20px 20px;background:#F3F9F9;border:1px solid #D1E2E3;border-radius:12px}
+form button{background:#02EFF0;color:#0F282F;border-color:#00B9BE;font-weight:650}
+input::file-selector-button{background:#FFFFFF;color:#0F282F;border:1px solid #B5CDCF;border-radius:6px;padding:7px;margin-right:8px}
+:focus-visible{outline:3px solid #00888C;outline-offset:2px}
+</style></head><body><main><small>DIWAN BOUTIQUE</small><h1>Pair QZ Tray on this PC</h1>
+<p>In QZ Tray, open <b>Advanced → Site Manager → + → Create New</b>. Confirm installation of the local demo certificate. Select both files from the <b>QZ Tray Demo Cert</b> folder on your desktop.</p>
+<form><label>Certificate · digital-certificate.txt<input type="file" id="cert" required></label><label>Private key · private-key.pem<input type="file" id="pem" required></label><button>Save pair on this PC</button></form>
+<output id="status" aria-live="polite"></output><button type="button" id="test">Test signed printer connection</button><p>If QZ asks for approval during the test, check <b>Remember this decision</b> and select <b>Allow</b> for your local certificate.</p>
+<script src="identity.js"></script><script src="setup.js"></script></main></body></html>
